@@ -7,4 +7,13 @@ type Playlist {
     id: ID!
     name: String!
     description: String
+    tracks: [Track!]!
+}
+
+type Track {
+    id: ID!
+    name: String!
+    durationMS: Int!
+    explicit: Boolean!
+    uri: String!
 }
