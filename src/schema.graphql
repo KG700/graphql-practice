@@ -1,5 +1,6 @@
 type Query {
     featuredPlaylists: [Playlist!]!
+    playlist(id: ID!): Playlist
 }
 
 type Playlist {
