@@ -3,6 +3,12 @@ type Query {
     playlist(id: ID!): Playlist
 }
 
+type Mutation {
+    addItemsToPlaylist(
+        input: AddItemsToPlaylistInput!
+    ): AddItemsToPlaylistPayload!
+}
+
 type Playlist {
     id: ID!
     name: String!
@@ -16,4 +22,16 @@ type Track {
     durationMS: Int!
     explicit: Boolean!
     uri: String!
+}
+
+type AddItemsToPlaylistPayload {
+    code: Int!
+    success: Boolean!
+    message: String!
+    playlist: Playlist
+}
+
+input AddItemsToPlaylistInput {
+    playlistId: ID!
+    uris: [String!]!
 }
